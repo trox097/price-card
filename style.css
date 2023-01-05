@@ -1,0 +1,143 @@
+html{ /* this one is to apply the border-box property to all the html file */
+  box-sizing: border-box;
+  font-family: 'Karla';
+  font-size: 16px;
+}
+
+/* we do not want the website to be showing as if it is coming out of the left corner of the page so the way to do this is by adding some padding to the body */
+
+body{
+  padding: 20px;
+}
+
+/* now we need to configure the spacing because it is taking the default spacing for the h2 and h4 and the p elements  so we are going to grab here these tags and configure them with our own spacing */
+
+h2, h4, p{
+  margin: 0px
+}
+
+
+*, *:before, *:after{  /* i want to apply the box sizing quality and inherit it to all the properties */
+  box-sizing: inherit;
+}
+
+#card{
+  width: 600px;
+  height: 400px;
+  /* we are going to need this property to give it the design it requires so we can go to box shadow tool in google to determine what needs to go in the property in a more visual way, we used cssgenerator for the shadow box tool*/
+ box-shadow: 2px 3px 7px 0px rgba(0,0,0,0.35);
+ border-radius: 5px;
+  /* here we face the problem that since we have other containers, even though the border of this one is round, the other two are still appearing and occupying the space so we are going to use the property of overflow and we are going to assign the the value of hidden to it to fix this, this saays to the main container, if there is something that is breaking out of your borders, just hide it*/
+  overflow: hidden;
+}
+
+
+#top-section{
+  width: 100%;
+  height: 45%;
+  /* we are going to add some padding here and in the rest of the sections individually so that our design is in align with the challenge */
+  
+ padding: 25px;
+}
+
+#bottom-section{
+  width: 100%;
+  height: 55%;
+  color: white;
+ 
+}
+
+#bottom-left-section{
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  vertical-align: top;
+  background-color: #2ab2af;
+  padding: 25px;
+}
+
+#bottom-right-section{
+  display: inline-block; /* this means that they can fit in the same space unlike a block element and this also respects the white spaces left in the document, in this case it would be the white spaces we left between the divs. This one is configure with a inline property and this follows different rules, that is why it is being displayed wrongly, so we are going to use the vertical-align property*/
+  vertical-align: top;
+  width: 50%;
+  height: 100%;
+  background-color: #2EBFBD;
+  padding: 25px;
+}
+
+#top-section h2{
+  color: #2ab2af;
+  margin-bottom: 20px;
+}
+
+#top-section h4{
+  color: #c0df34;
+  margin-bottom: 10px;
+}
+
+#top-section p{
+  color: #98a6bd;
+}
+
+button {
+  color: white;
+  background-color: #c0df34;
+  border: none;
+  padding: 10px;
+  width: 100%; /* since we put some padding in the parent container, when we set up the width to be 100$ it is going to cover the internal part of the container, leaving the rest of the space to the padding previously set */
+  
+  border-radius: 5px;  
+}
+
+button:hover{
+  cursor: pointer; /* this is the first thing we want to do so we can see the cursor changing when we hover over */
+  background-color: #A9C42D;
+  transform: scale(1.02); /* in this one we can add multiple things but in this case we are uusing the scale property so the the button expands a little bit when we hover over it */
+}
+
+#price {
+  font-weight: 700;
+  font-size: 1.4rem; /* this meas that this is going to be  140% of  the root element font size of the root element that is the html at the beginning of the page */
+}
+
+#bottom-left-section h4{
+  
+  margin-bottom: 25px;
+  
+}
+
+#bottom-left-section p{
+  
+  font-size: 0.8rem;
+  margin-bottom: 40px;
+  
+}
+
+/* we are going to make the 29 dollars and the price frenquency appear in the same line and for that to happen since the default is block and block does not allow us to do that, we are going to take the two IDs and set them up with inline-block for display */
+
+#price-frequency, #price{
+  display: inline-block
+}
+
+/* since the per month info is aligned with the bottom, we are going to first use the position: relative that allows us to to set them, relative to themselves and then we give it the top property, we give it a negative amount of pixels so that it can go up */
+
+#price-frequency{
+  position: relative;
+  top: -3px;
+  font-size: 0.8rem; /* this one takes the 0.8 of the font size set up in the html */
+  opacity: 0.6; /* this property allows us to make it ligther */
+  margin-left 5px; /* this one allows us to move it to the left */
+}
+
+#price-container{
+  margin-bottom: 10px;
+  
+}
+
+ul{
+  padding: 0px;
+  list-style: none;
+  font-size: 0.8rem;
+  opacity:  0.8;
+  
+}
